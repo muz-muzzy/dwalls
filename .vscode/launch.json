@@ -5,7 +5,7 @@
             "name": "(lldb-mac) Launch",
             "type": "lldb",
             "request": "launch",
-            "program": "${workspaceFolder}/build/subprojects/Build/dwalls_core/main.app",
+            "program": "${workspaceFolder}/build/subprojects/Build/dwalls_core/main",
             "cwd": "${workspaceFolder}",
             "preLaunchTask": "Build with CMake"
         },
