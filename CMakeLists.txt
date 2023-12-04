@@ -5,6 +5,9 @@ cmake_minimum_required(VERSION 3.10)
 # Set the project name
 project(Dwalls)
 
+# Find the QtWidgets library
+find_package(Qt5Widgets)
+
 # Specify the C++ standard
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
@@ -29,5 +32,5 @@ endif()
 # Add the executable
 add_executable(Dwalls ${SOURCES})
 
-# Link the libraries to the executable
-target_link_libraries(Dwalls ${HEIF_LIBRARIES} ${JPEG_LIBRARIES})
+# Use the Widgets module from Qt 5
+target_link_libraries(Dwalls Qt5::Widgets ${HEIF_LIBRARIES} ${JPEG_LIBRARIES})
