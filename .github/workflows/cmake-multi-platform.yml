@@ -11,7 +11,8 @@ on:
 jobs:
   build:
     runs-on: ${{ matrix.os }}
-
+    env:
+      VCPKG_ROOT: ${{ github.workspace }}/vcpkg
     strategy:
       # Set fail-fast to false to ensure that feedback is delivered for all matrix combinations. Consider changing this to true when your workflow is stable.
       fail-fast: false
@@ -47,10 +48,24 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Install dependencies
-      run: sudo apt-get install libheif-dev libjpeg-dev
-    
+      run: |
+        if [[ "${{ runner.os }}" == "Windows" ]]; then
+          git clone https://github.com/microsoft/vcpkg
+          .\vcpkg\bootstrap-vcpkg.bat
+          .\vcpkg\vcpkg install qt5-base
+          .\vcpkg\vcpkg install libheif
+          .\vcpkg\vcpkg install libjpeg-turbo
+        else
+          sudo apt-get install libheif-dev libjpeg-dev
+        fi
+
     - name: Install Qt
-      run: sudo apt install qtbase5-dev qt5-qmake
+      run: |
+        if [[ "${{ runner.os }}" == "Windows" ]]; then
+          echo "Qt5 is already installed with vcpkg"
+        else
+          sudo apt install qtbase5-dev qt5-qmake
+        fi
 
     - name: Set reusable strings
       # Turn repeated input strings (such as the build output directory) into step outputs. These step outputs can be used throughout the workflow file.
