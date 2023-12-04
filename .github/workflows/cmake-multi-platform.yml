@@ -53,9 +53,10 @@ jobs:
         if [[ "${{ runner.os }}" == "Windows" ]]; then
           git clone https://github.com/microsoft/vcpkg
           cmd /c ".\\vcpkg\\bootstrap-vcpkg.bat"
-          .\\vcpkg\\vcpkg install qt5-base
-          .\\vcpkg\\vcpkg install libheif
-          .\\vcpkg\\vcpkg install libjpeg-turbo
+          cmd /c ".\\vcpkg\\bootstrap-vcpkg.bat"
+          cmd /c ".\\vcpkg\\vcpkg install qt5-base"
+          cmd /c ".\\vcpkg\\vcpkg install libheif"
+          cmd /c ".\\vcpkg\\vcpkg install libjpeg-turbo"
         else
           sudo apt-get install libheif-dev libjpeg-dev
         fi
