@@ -48,6 +48,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Install dependencies
+      shell: bash
       run: |
         if [[ "${{ runner.os }}" == "Windows" ]]; then
           git clone https://github.com/microsoft/vcpkg
@@ -60,6 +61,7 @@ jobs:
         fi
 
     - name: Install Qt
+      shell: bash
       run: |
         if [[ "${{ runner.os }}" == "Windows" ]]; then
           echo "Qt5 is already installed with vcpkg"
