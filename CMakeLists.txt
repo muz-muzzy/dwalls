@@ -5,6 +5,12 @@ cmake_minimum_required(VERSION 3.10)
 # Set the project name
 project(Dwalls)
 
+# Set the paths to the installed libraries for Windows
+if(WIN32)
+    set(Qt5Widgets_DIR "${VCPKG_ROOT}/installed/x64-windows/share/qt5")
+    set(HEIF_DIR "${VCPKG_ROOT}/installed/x64-windows/share/heif")
+endif()
+
 # Find the QtWidgets library
 find_package(Qt5Widgets)
 
