@@ -21,9 +21,9 @@ set(SOURCES src/main.cpp)
 
 # Conditionally add the platform-specific source files
 if(WIN32)
-    list(APPEND SOURCES include/wallpaper_manager/windows/windows_manager.cpp)
+    list(APPEND SOURCES src/wallpaper_manager/windows/windows_manager.cpp)
 else()
-    list(APPEND SOURCES include/wallpaper_manager/linux/linux_manager.cpp)
+    list(APPEND SOURCES src/wallpaper_manager/linux/linux_manager.cpp)
 endif()
 
 # Add the executable
