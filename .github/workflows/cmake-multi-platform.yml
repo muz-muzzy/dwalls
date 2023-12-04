@@ -81,7 +81,7 @@ jobs:
       shell: bash
       run: |
         if [[ "${{ runner.os }}" == "Windows" ]]; then
-          export VCPKG_ROOT=${{ github.workspace }}\\vcpkg
+          export VCPKG_ROOT=D:\\a\\dwalls\\dwalls\\vcpkg
           cmake -B ${{ steps.strings.outputs.build-output-dir }} -DCMAKE_TOOLCHAIN_FILE=${VCPKG_ROOT}\\scripts\\buildsystems\\vcpkg.cmake
         else
           cmake -B ${{ steps.strings.outputs.build-output-dir }}
