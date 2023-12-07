@@ -13,4 +13,4 @@ add_definitions(${Qt5Widgets_DEFINITIONS})
 
 add_executable(dwalls src/main.cpp src/heic_processor/heic_processor.cpp)
 
-target_link_libraries(dwalls Qt5::Widgets heif)
+target_link_libraries(dwalls Qt5::Widgets heif jpeg)

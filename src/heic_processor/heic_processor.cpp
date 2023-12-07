@@ -103,20 +103,20 @@ void extractImagesFromHeic(const std::string &heicFilePath, const std::string &o
     heif_context_free(ctx);
 }
 
-int main(int argc, char *argv[])
-{
-    if (argc != 3)
-    {
-        std::cerr << "Usage: " << argv[0] << " <input.heic> <output_folder>" << std::endl;
-        return 1;
-    }
+// int main(int argc, char *argv[])
+// {
+//     if (argc != 3)
+//     {
+//         std::cerr << "Usage: " << argv[0] << " <input.heic> <output_folder>" << std::endl;
+//         return 1;
+//     }
 
-    std::string heicFilePath = argv[1];
-    std::string outputFolder = argv[2];
+//     std::string heicFilePath = argv[1];
+//     std::string outputFolder = argv[2];
 
-    extractImagesFromHeic(heicFilePath, outputFolder);
+//     extractImagesFromHeic(heicFilePath, outputFolder);
 
-    std::cout << "Images extracted to " << outputFolder << "/walls" << std::endl;
+//     std::cout << "Images extracted to " << outputFolder << "/walls" << std::endl;
 
-    return 0;
-}
+//     return 0;
+// }
