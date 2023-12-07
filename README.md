@@ -2,11 +2,13 @@
 
 Dwalls is a desktop application for Windows and Linux that allows you to set dynamic wallpapers, just like on macOS. 
 
+Note: development for windows is postponed indefinitely
+
 ## Features
 
-- Extract images from .heic files
-- Set dynamic wallpapers based on the time metadata in the images
-- Supports both Windows and Linux
+- Extract images from .heic files **(done ✅)**
+- Set dynamic wallpapers based on the time metadata in the images **(in development 🛠️)**
+- Supports both Windows and Linux **(in development 🛠️)**
 
 ## Installation
 
@@ -16,7 +18,19 @@ _Coming soon_
 
 ### Linux
 
-_Coming soon_
+#### Clone
+
+```bash
+git clone https://github.com/muz-muzzy/dwalls.git && cd dwalls
+```
+
+#### Build
+```bash
+cmake -B build
+```
+```bash
+cmake --build build
+```
 
 ## Usage
 
